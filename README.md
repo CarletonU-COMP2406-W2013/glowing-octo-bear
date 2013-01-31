@@ -7,7 +7,7 @@ Project name: "Quick-Serve"
 
 Proposal (1 paragraph): The premise of "Quick-Serve" is to provide a free web-based restaurant order placing
 application. Many restaurants have some sort of software based system, possibly even proprietary, of placing
-orders between the waiters and the kitchen staff, we a proposing something similar. Quick-Serve will allow for
+orders between the waiters and the kitchen staff, we are proposing something similar. Quick-Serve will allow for
 a restaurant to create a profile, customising menus/prices/and table numbers. There will be two views, a kitchen
 view and a waiter view. Waiters will then log in under the restaurant profile and push orders over the web
 between devices to a kitchen computer that will display a constantly refreshing feed of new orders coming in.
