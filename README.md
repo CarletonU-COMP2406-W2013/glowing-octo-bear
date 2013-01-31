@@ -21,7 +21,7 @@ Proposed Milestones:
   5.Add ability for waiters to create orders and send them to the kitchen view
   6.Implement live polling kitchen view
   7.Working prototype/demo
-  8.Draft documentation
+  8.Draft documentation  
   9.Final code and documentation (April 10th)
 
 TA: Bjorn Vardal
