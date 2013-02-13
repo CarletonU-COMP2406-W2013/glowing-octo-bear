@@ -140,15 +140,14 @@ body {
 }
 
 #menu-content-right {
-	margin: 0 0 0 80%;
 	height: 900%;
 	width: 20%;
+	float: left;
 }
 
 #menu-category {
-	height: 16.95%;
+	height: 16.9%;
 	width: 100%;
-	float: right;
 	background-image: -webkit-linear-gradient(top, rgb(112, 80, 143), rgb(77, 55, 111)), url(/images/bg-pattern001.png);
 	border-top: solid rgba(0, 0, 0, 0.19) 1px;
 }
