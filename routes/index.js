@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Order UP' });
+  res.render('index', { title: 'Order UP', name: '| Order Up' });
 };
