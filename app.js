@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -6,6 +5,7 @@
 var express = require('express')
   , routes = require('./routes')
   , kitchen = require('./routes/kitchen')
+  , waiter = require('./routes/waiter')
   , http = require('http')
   , path = require('path');
 
@@ -15,12 +15,15 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3500);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+
 });
 
 app.configure('development', function(){
@@ -28,6 +31,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/waiter', waiter.waiter);
 app.get('/kitchen', kitchen.kitchen);
 
 http.createServer(app).listen(app.get('port'), function(){
