@@ -1,0 +1,241 @@
+// Variables
+// Colors
+// RED
+@light-red: rgba(205, 103, 106, 0.8);
+@almost-red: rgba(163, 71, 74, 0.8);
+@red: rgba(146, 45, 48, 0.8);
+@dark-red: rgba(109, 23, 26, 0.8);
+// ORANGE 
+@light-orange: rgba(207, 157, 104, 0.8);
+@almost-orange: rgba(184, 128, 72, 0.8);
+@orange: rgba(163, 106, 48, 0.8);
+@dark-orange: rgba(124, 75, 24, 0.8);
+
+html {
+  background-color: #292929;
+  background-image: url(/images/bg-pattern001.png);
+  background-repeat: repeat;
+}
+body {
+  height: 66em;
+  margin: 0 auto;
+  color: #ddd;
+  font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 5px 5px 50px 1px black;
+}
+.header {
+  width: 100%;
+  height: 7%;
+  background-color: #222;
+  background-image: url(/images/bg-pattern001.png);
+  box-shadow: 0px 5px 15px 2px #131313;
+}
+.header p {
+  margin: 0;
+  padding: 15px 0 0 10px;
+  color: #fff;
+  font: 2em "Helvetica Neue";
+  font-weight: 100;
+}
+.app {
+  width: 100%;
+  height: 86%;
+  background-color: #555555;
+  background-image: url(/images/bg-pattern001.png);
+  text-shadow: 4px 3px 8px rgba(0, 0, 0, 0.33);
+  text-align: center;
+}
+.content-wrapper {
+  width: 100%;
+  height: 79.8%;
+  color: #eee;
+  overflow: auto;
+}
+#tables .content-wrapper {
+  height: 90%;
+}
+#tables {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-color: #333333;
+  background-image: url(/images/bg-pattern001.png);
+}
+#tables .section-title {
+  background-image: -webkit-linear-gradient(top, @orange, @dark-orange), url(/images/bg-pattern002.png);
+  border-color: @light-orange #ff0000 @dark-orange @orange;
+}
+#tables-menu-item {
+  width: 100%;
+  height: 143px;
+  background-image: -webkit-linear-gradient(top, @light-orange, @almost-orange), url(/images/bg-pattern001.png);
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+  font-weight: normal;
+  font: 6em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+#tables .section-footer {
+  background-image: -webkit-linear-gradient(top, @orange, @dark-orange), url(/images/bg-pattern002.png);
+  border-color: @light-orange #ff0000 @dark-orange @orange;
+}
+#orders {
+  width: 40%;
+  height: 100%;
+  float: left;
+  background-color: #444444;
+  background-image: url(/images/bg-pattern001.png);
+}
+#orders .section-title {
+  background-image: -webkit-linear-gradient(top, @red, @dark-red), url(/images/bg-pattern002.png);
+  border-color: @light-red #ff0000 @dark-red @red;
+}
+#orders-menu-item {
+  width: 100%;
+  height: 71px;
+  background-image: -webkit-linear-gradient(top, @light-red, @almost-red), url(/images/bg-pattern001.png);
+  font-size: 1.5em;
+  font-weight: normal;
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+}
+#orders-menu-item-total {
+  width: 100%;
+  height: 50%;
+  background-image: -webkit-linear-gradient(top, #cf2b2b, #580e0e), url(/images/bg-pattern001.png);
+  font-size: 0.25em;
+  font-weight: normal;
+  color: #eee;
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+}
+#item-name {
+  height: 100%;
+  float: left;
+  margin-left: 2em;
+  margin-top: -0.35em;
+}
+#item-price {
+  height: 100%;
+  float: right;
+  margin-right: 2em;
+  margin-top: -0.35em;
+}
+#orders .section-footer {
+  background-image: -webkit-linear-gradient(top, @red, @dark-red), url(/images/bg-pattern002.png);
+  border-color: @light-red #ff0000 @dark-red @red;
+}
+#menu {
+  width: 40%;
+  height: 100%;
+  float: left;
+  background-color: #333;
+  background-image: url(/images/bg-pattern001.png);
+}
+#menu .section-title {
+  background-image: -webkit-linear-gradient(top, @orange, @dark-orange), url(/images/bg-pattern002.png);
+  border-color: @light-orange #ff0000 @dark-orange @orange;
+}
+#menu-content-left {
+  height: 100%;
+  width: 80%;
+  float: left;
+  overflow: auto;
+}
+#menu-menu-item {
+  width: 100%;
+  height: 71px;
+  float: left;
+  background-image: -webkit-linear-gradient(top, @light-orange, @almost-orange), url(/images/bg-pattern001.png);
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+#menu-content-right {
+  height: 100%;
+  width: 20%;
+  float: left;
+}
+#menu-category {
+  height: 143px;
+  width: 100%;
+  background-image: -webkit-linear-gradient(top, @almost-orange, @orange), url(/images/bg-pattern001.png);
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+}
+#menu .section-footer {
+  background-image: -webkit-linear-gradient(top, @orange, @dark-orange), url(/images/bg-pattern002.png);
+  border-color: @light-orange #ff0000 @dark-orange @orange;
+}
+.section-title {
+  width: 100%;
+  height: 10%;
+  font-size: 4.5em;
+  font-weight: 700;
+  border-width: 1px 0 1px 1px;
+  border-radius: 6px;
+  border-style: solid;
+}
+.section-footer {
+  width: 100%;
+  height: 10%;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+}
+.send-button {
+  background-image: -webkit-linear-gradient(top, rgba(168, 167, 167, 0.8), rgba(71, 50, 50, 0.8)), url(/images/bg-pattern002.png);
+  border-radius: 6px;
+  border-style: outset;
+  width: 55%;
+  height: 70%;
+  margin-top: 15px;
+  margin-left: 325px;
+}
+.send-button p {
+  margin: 13px 0px;
+  font: 2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#orders .send-button {
+  border-color: @dark-red;
+}
+#menu .send-button {
+  border-color: @dark-orange;
+}
+.footer {
+  width: 100%;
+  height: 7%;
+  border: 1px solid black;
+  background-color: #222;
+  background-image: url(/images/bg-pattern001.png);
+  box-shadow: 0 0 15px 1px #131313;
+}
+.footer p {
+  margin: 0;
+  padding-top: 30px;
+  color: #777;
+  text-align: center;
+  font: 15px "Helvetica Neue";
+}
+.order-content-1 {
+  width: 100%;
+  height: 100px;
+  background-image: -webkit-linear-gradient(top, #928e96, #4b4a4d), url(/images/bg-pattern001.png);
+  box-shadow: 0px 5px 15px 2px rgba(19, 19, 19, 0.35);
+  font: 4.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 4px 3px 8px rgba(0, 0, 0, 0.33);
+}
+.order-content-2 {
+  width: 100%;
+  height: 100px;
+  background-image: -webkit-linear-gradient(top, #414141, #444444), url(/images/bg-pattern001.png);
+  box-shadow: 10px 5px 5px 2px rgba(19, 19, 19, 0.35);
+  font: 4.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 4px 3px 8px rgba(0, 0, 0, 0.33);
+}
+.order-name {
+  height: 100%;
+  float: left;
+  padding-left: 3%;
+}
+.order-time {
+  height: 100%;
+  float: right;
+  padding-right: 3%;
+  text-align: right;
+}

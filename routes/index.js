@@ -1,8 +1,6 @@
-
 /*
- * GET home page.
- */
-
+* GET Kitchen page
+*/
 exports.index = function(req, res){
-  res.render('index', { title: 'Order UP', name: '| Order Up' });
+  res.render('index', { title: 'Login', name: '| Login'});
 };
