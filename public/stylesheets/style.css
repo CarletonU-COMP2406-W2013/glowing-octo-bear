@@ -52,10 +52,19 @@ body {
   background-image: -webkit-linear-gradient(top, rgba(163, 106, 48, 0.8), rgba(124, 75, 24, 0.8)), url(/images/bg-pattern002.png);
   border-color: rgba(207, 157, 104, 0.8) #ff0000 rgba(124, 75, 24, 0.8) rgba(163, 106, 48, 0.8);
 }
-#tables-menu-item {
+.tables-menu-item {
   width: 100%;
   height: 143px;
   background-image: -webkit-linear-gradient(top, rgba(207, 157, 104, 0.8), rgba(184, 128, 72, 0.8)), url(/images/bg-pattern001.png);
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+  font-weight: normal;
+  font: 6em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+.selected-tables-menu-item {
+  width: 100%;
+  height: 143px;
+  background-image: -webkit-linear-gradient(top, rgba(163, 106, 48, 0.8), rgba(124, 75, 24, 0.8)), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
   font-weight: normal;
   font: 6em "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -76,7 +85,7 @@ body {
   background-image: -webkit-linear-gradient(top, rgba(146, 45, 48, 0.8), rgba(109, 23, 26, 0.8)), url(/images/bg-pattern002.png);
   border-color: rgba(205, 103, 106, 0.8) #ff0000 rgba(109, 23, 26, 0.8) rgba(146, 45, 48, 0.8);
 }
-#orders-menu-item {
+.orders-menu-item {
   width: 100%;
   height: 71px;
   background-image: -webkit-linear-gradient(top, rgba(205, 103, 106, 0.8), rgba(163, 71, 74, 0.8)), url(/images/bg-pattern001.png);
@@ -84,7 +93,15 @@ body {
   font-weight: normal;
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
 }
-#orders-menu-item-total {
+.selected-orders-menu-item {
+  width: 100%;
+  height: 71px;
+  background-image: -webkit-linear-gradient(top, rgba(146, 45, 48, 0.8), rgba(109, 23, 26, 0.8)), url(/images/bg-pattern001.png);
+  font-size: 1.5em;
+  font-weight: normal;
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+}
+.orders-menu-item-total {
   width: 100%;
   height: 50%;
   background-image: -webkit-linear-gradient(top, #cf2b2b, #580e0e), url(/images/bg-pattern001.png);
@@ -93,13 +110,13 @@ body {
   color: #eee;
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
 }
-#item-name {
+.item-name {
   height: 100%;
   float: left;
   margin-left: 2em;
   margin-top: -0.35em;
 }
-#item-price {
+.item-price {
   height: 100%;
   float: right;
   margin-right: 2em;
@@ -126,11 +143,20 @@ body {
   float: left;
   overflow: auto;
 }
-#menu-menu-item {
+.menu-menu-item {
   width: 100%;
   height: 71px;
   float: left;
   background-image: -webkit-linear-gradient(top, rgba(207, 157, 104, 0.8), rgba(184, 128, 72, 0.8)), url(/images/bg-pattern001.png);
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+.selected-menu-menu-item {
+  width: 100%;
+  height: 71px;
+  float: left;
+  background-image: -webkit-linear-gradient(top, rgba(163, 106, 48, 0.8), rgba(124, 75, 24, 0.8)), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
   font-size: 1.5em;
   font-weight: normal;
@@ -140,10 +166,16 @@ body {
   width: 20%;
   float: left;
 }
-#menu-category {
+.menu-category {
   height: 143px;
   width: 100%;
   background-image: -webkit-linear-gradient(top, rgba(184, 128, 72, 0.8), rgba(163, 106, 48, 0.8)), url(/images/bg-pattern001.png);
+  border-top: solid rgba(0, 0, 0, 0.19) 1px;
+}
+.selected-menu-category {
+  height: 143px;
+  width: 100%;
+  background-image: -webkit-linear-gradient(top, rgba(163, 106, 48, 0.8), rgba(124, 75, 24, 0.8)), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
 }
 #menu .section-footer {
@@ -182,6 +214,25 @@ body {
   border-color: rgba(109, 23, 26, 0.8);
 }
 #menu .send-button {
+  border-color: rgba(124, 75, 24, 0.8);
+}
+.pressed-send-button {
+  background-image: -webkit-linear-gradient(top, rgba(128, 127, 127, 0.8), rgba(31, 10, 10, 0.8)), url(/images/bg-pattern002.png);
+  border-radius: 6px;
+  border-style: outset;
+  width: 55%;
+  height: 70%;
+  margin-top: 15px;
+  margin-left: 325px;
+}
+.pressed-send-button p {
+  margin: 13px 0px;
+  font: 2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#orders .pressed-send-button {
+  border-color: rgba(109, 23, 26, 0.8);
+}
+#menu .pressed-send-button {
   border-color: rgba(124, 75, 24, 0.8);
 }
 .footer {
