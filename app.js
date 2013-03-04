@@ -7,7 +7,8 @@ var express = require('express')
   , kitchen = require('./routes/kitchen')
   , waiter = require('./routes/waiter')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , db = require("./sessionDB");
 
 var app = express();
 
@@ -20,6 +21,8 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser())
+  app.use(express.session({ secret: 't0nberry', key: 'cooks'}))
   app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
@@ -32,6 +35,10 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/waiter', waiter.waiter);
+app.post('/login', function(req,res) {
+  db.login(req, req.body.username)
+  res.redirect("/waiter");
+})
 app.get('/kitchen', kitchen.kitchen);
 
 http.createServer(app).listen(app.get('port'), function(){
