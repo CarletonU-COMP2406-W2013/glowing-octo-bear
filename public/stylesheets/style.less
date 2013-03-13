@@ -22,6 +22,7 @@ body {
   color: #ddd;
   font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-shadow: 5px 5px 50px 1px black;
+  overflow-x: hidden; 
 }
 .header {
   width: 100%;
@@ -185,13 +186,44 @@ body {
   float: left;
 }
 .menu-category {
-  height: 143px;
+  height: 153px;
   width: 100%;
   background-image: -webkit-linear-gradient(top, @almost-orange, @orange), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
 }
+
+#drinks {
+  width: 128px;
+  height: 128px;
+  margin: 12.3px;
+  background-image: url(/images/drink-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+}
+
+#food {
+  width: 128px;
+  height: 128px;
+  margin: 12.3px;
+  background-image: url(/images/food-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+}
+
+#dessert {
+  width: 128px;
+  height: 128px;
+  margin: 12.3px;
+  background-image: url(/images/dessert-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+}
+
 .selected-menu-category {
-  height: 143px;
+  height: 153px;
   width: 100%;
   background-image: -webkit-linear-gradient(top, @orange, @dark-orange), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
