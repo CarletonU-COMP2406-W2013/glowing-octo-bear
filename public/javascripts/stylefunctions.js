@@ -23,4 +23,5 @@ $(document).ready(function(){
 	$(".send-button").mouseup(function(){
       $(this).toggleClass("pressed-send-button").toggleClass("send-button")
 	});
+	$('body').disableSelection();
 });

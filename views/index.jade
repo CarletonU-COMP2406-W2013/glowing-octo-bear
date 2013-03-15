@@ -5,7 +5,7 @@ block header
 
 block content
   div#loginWrapper
-    form(action="/login", method="post")
+    form()
       div.control-group.input-append
         label.add-on(for="username") Username: 
         input(type="text", name="username")
@@ -13,7 +13,7 @@ block content
         label.add-on(for"password") Password: 
         input(type="text", name="password")
       div.inputbtns
-        button(type="submit") Login
+        button#login(type="button") Login
         button#register(type="button") Register
 
     .registerNotification

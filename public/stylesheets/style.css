@@ -30,6 +30,9 @@ body {
   float: right;
   margin-right: 1%;
 }
+form {
+  padding-top: 1%;
+}
 #loginWrapper {
   height: 100%;
 }

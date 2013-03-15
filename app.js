@@ -113,7 +113,7 @@ var username = req.body.username;
   Waiter.find({username: username}, function(err, users){
     //we couldn't find a user with that name
     if(err || users.length==0){
-      res.redirect("/?error=invalid username or password"); 
+      res.send(400);
       return;
     }
     
@@ -122,9 +122,9 @@ var username = req.body.username;
     bcrypt.compare(password, user.password, function(err, authenticated){
       if(authenticated){
         req.session.username = user.username;
-        res.redirect("/waiter");
+        res.send(200);
       }else{
-        res.redirect("/?error=invalid username or password"); 
+        res.send(401);
       }
     });
   });
