@@ -76,7 +76,7 @@ app.get('/waiter', function(req, res, next){
     }
 }, waiter.waiter);
 
-app.post("/register", function(req, res){
+app.post("/", function(req, res){
   var username = req.body.username;
   var password = req.body.password;
   Waiter.find({username: username}, function(err, users){
@@ -97,7 +97,7 @@ app.post("/register", function(req, res){
         
         //save() is a magic function from mongoose that saves this user to our DB
         newWaiter.save(function(err, newWaiter){
-          res.send("successfully registered user: "+newWaiter.username);
+          
         });    
       });
     }); 
@@ -121,7 +121,7 @@ var username = req.body.username;
     bcrypt.compare(password, user.password, function(err, authenticated){
       if(authenticated){
         req.session.username = user.username;
-        res.redirect("/users");
+        res.redirect("/waiter");
       }else{
         res.redirect("/?error=invalid username or password"); 
       }
