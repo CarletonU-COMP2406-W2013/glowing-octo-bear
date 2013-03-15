@@ -76,9 +76,10 @@ app.get('/waiter', function(req, res, next){
     }
 }, waiter.waiter);
 
-app.post("/", function(req, res){
+app.post("/register", function(req, res){
   var username = req.body.username;
   var password = req.body.password;
+  req.session.username = username
   Waiter.find({username: username}, function(err, users){
     //check if the user already exists
     if(users.length!=0){
@@ -97,7 +98,7 @@ app.post("/", function(req, res){
         
         //save() is a magic function from mongoose that saves this user to our DB
         newWaiter.save(function(err, newWaiter){
-          
+          res.send(200)
         });    
       });
     }); 
