@@ -24,6 +24,14 @@ body {
   box-shadow: 5px 5px 50px 1px black;
   overflow-x: hidden; 
 }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: block;
+}
 .header {
   width: 100%;
   height: 7%;
@@ -178,18 +186,18 @@ form {
   overflow: auto;
 }
 .menu-menu-item {
+  max-width: 768px;
   width: 100%;
   height: 71px;
-  float: left;
   background-image: -webkit-linear-gradient(top, @light-orange, @almost-orange), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
   font-size: 1.5em;
   font-weight: normal;
 }
 .selected-menu-menu-item {
+  max-width: 768px;
   width: 100%;
   height: 71px;
-  float: left;
   background-image: -webkit-linear-gradient(top, @orange, @dark-orange), url(/images/bg-pattern001.png);
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
   font-size: 1.5em;

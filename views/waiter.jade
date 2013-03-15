@@ -27,16 +27,18 @@ block content
   #orders
     .section-title Orders
     .content-wrapper
-      .orders-menu-item
-        .item-name
-          p Sandwich
-        .item-price
-          p $5.99
-      .orders-menu-item
-        .item-name
-          p Ham
-        .item-price
-          p $2.99
+      ul#sortable.ui-sortable
+        li.orders-menu-item
+            .item-name
+              p Sandwich
+            .item-price
+              p $5.99
+        li.orders-menu-item
+            .item-name
+              p Sandwich
+            .item-price
+              p $5.99
+
     .section-footer
       .send-button
         p Send Orders to Kitchen
@@ -45,21 +47,12 @@ block content
     .section-title Menu
     .content-wrapper
       #menu-content-left
-        .menu-menu-item
-          .item-name
-            p Sandwich
-          .item-price
-            p $5.99
-        .menu-menu-item
-          .item-name
-            p Sandwich
-          .item-price
-            p $5.99
-        .menu-menu-item
-          .item-name
-            p Sandwich
-          .item-price
-            p $5.99
+        ul
+          li#draggable.menu-menu-item
+              .item-name
+                p Sandwich
+              .item-price
+                p $5.99
 
       #menu-content-right
         .menu-category
