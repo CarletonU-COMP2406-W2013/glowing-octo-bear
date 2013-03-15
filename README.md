@@ -16,10 +16,10 @@ Proposed Milestones:
   2. Framework demo (running application skeleton)
   3. Implement waiter login
   4. Fill Database with food menu data
-  5. Add ability for waiters to create orders and send them to the kitchen view
-  6. Implement live polling kitchen view
-  7. Working prototype/demo
-  8. Draft documentation  
+  5. Creates orders from fake menu item
+  6. Populate menu with real data
+  7. Send custom orders to database
+  8. Implement live polling kitchen view
   9. Final code and documentation (April 10th)
 
 TA: Bjorn Vardal

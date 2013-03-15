@@ -1,0 +1,1 @@
+mongo OrderUp --eval "printjson(db.getCollectionNames())";
