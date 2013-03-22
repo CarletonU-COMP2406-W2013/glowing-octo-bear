@@ -1,4 +1,6 @@
 $(function(){
+  // Home Page
+  // handles clicking on the registion button
 	$("#register").on("click",function(){
 		var $form = $("form");
 		var $inputs = $form.find("input, select, button, textarea")
@@ -11,13 +13,15 @@ $(function(){
 		});
 		register.done(function (data, textStatus) {
 			$(".registerNotification").text("Thanks for registering!");
-          	$(".registerNotification").fadeOut(2000, function() {
-          		$(".registerNotification").text("").fadeIn(0);
-          		window.location = 'waiter'
-      		});
-        });
+      $(".registerNotification").fadeOut(2000, function() {
+      	$(".registerNotification").text("").fadeIn(0);
+      	window.location = 'waiter'
+  		});
+    });
 	});
 
+  // Home Page
+  // handles clicking on the login button
 	$("#login").on("click",function(){
 		var $form = $("form");
 		var serializedData = $form.serialize();
@@ -33,29 +37,23 @@ $(function(){
           		window.location = 'waiter'
       		});
         });
-        login.fail(function (data, textStatus) {
-        	if(textStatus === 400) {
-        		$(".registerNotification").text("User doesn't exist in database");
-        	} else {
-        		$(".registerNotification").text("Incorrect Password");
-        	}
-			$(".registerNotification").fadeOut(2000, function() {
-          			$(".registerNotification").text("").fadeIn(0);
-          	});
-        });
+    login.fail(function (data, textStatus) {
+    	if(textStatus === 400) {
+    		$(".registerNotification").text("User doesn't exist in database");
+    	} else {
+    		$(".registerNotification").text("Incorrect Password");
+    	}
+
+      $(".registerNotification").fadeOut(2000, function() {
+      			$(".registerNotification").text("").fadeIn(0);
+      });
+    });
 	});
 
-	$( "#sortable" ).sortable({
-      revert: true,
-      stop: function(event, ui) {
-        $(ui.item).switchClass("menu-menu-item", "orders-menu-item");
-      }
-    });
+  // /waiter Page
+  // loads drink data from MongoDB and displays it in menu
+  $("drinks").on("click", function(){
+    Console.log(db.menu.find({type: "Beverage"}));
+  });
 
-    $( "#draggable" ).draggable({
-      connectToSortable: "#sortable",
-      helper: "clone",
-      revert: "invalid",
-      distance: 20
-    });
 });
