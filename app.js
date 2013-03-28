@@ -169,7 +169,7 @@ app.post("/sendorder", function(req, res){
       if(err){
           console.log("Error: %s", err);
       }
-
+      // cleans out that tables orders
       var query = Order.remove({table: req.body.data[0].table});
       query.exec();
 
