@@ -11,20 +11,37 @@ var express = require('express')
   , bcrypt = require("bcrypt") //hashing algorithm
   , mongoose = require("mongoose")
   , mongoStore = require("connect-mongo")(express)
-  , Waiter;
+  , Waiter
+  , Menu;
 
-  mongoose.connect("mongodb://localhost/OrderUp");
-  var db = mongoose.connection;
+mongoose.connect("mongodb://localhost/OrderUp");
+var db = mongoose.connection;
 
-  db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'connection error:'));
 
-  db.once('open', function callback () {
-  var waiterSchema = mongoose.Schema({
-    username: String,
-    password: String
-  });
-  
-  Waiter = mongoose.model("Waiter", waiterSchema);
+db.once('open', function callback () {
+var waiterSchema = mongoose.Schema({
+  username: String,
+  password: String
+});
+var orderSchema = mongoose.Schema({
+  _id: Number,
+  table: Number,
+  name: String,
+  price: String
+});
+var menuSchema = mongoose.Schema({
+  _id: Number,
+  name: String,
+  price: Number,
+  type: String
+}, {
+  collection: "menu"
+})
+
+Waiter = mongoose.model("Waiter", waiterSchema);
+Order = mongoose.model("Order", orderSchema);
+Menu = mongoose.model("Menu", menuSchema);
 });
 
 var app = express();
@@ -76,6 +93,12 @@ app.get('/waiter', function(req, res, next){
     }
 }, waiter.waiter);
 
+app.post('/drinks', function(req, res){
+  Menu.find({}, function(err, items) {
+      res.send(200,items)
+  });
+});
+
 app.post("/register", function(req, res){
   var username = req.body.username;
   var password = req.body.password;
@@ -105,9 +128,9 @@ app.post("/register", function(req, res){
   }); 
 });
 
-
+// handle login
 app.post('/login', function(req,res) {
-var username = req.body.username;
+  var username = req.body.username;
   var password = req.body.password;
   //Search the Database for a Waiter with the given username
   Waiter.find({username: username}, function(err, users){
@@ -130,12 +153,38 @@ var username = req.body.username;
   });
 });
 
+// handle logout
 app.post("/logout", function(req, res){
   req.session.destroy(function(err){
       if(err){
           console.log("Error: %s", err);
       }
       res.redirect("/");
+  }); 
+});
+
+// handle orderCreation
+app.post("/sendorder", function(req, res){
+  req.session.destroy(function(err){
+      if(err){
+          console.log("Error: %s", err);
+      }
+
+      var query = Order.remove({table: req.body.data[0].table});
+      query.exec();
+
+
+      var newOrder;
+      for (var i = req.body.data.length - 1; i >= 0; i--) {
+        newOrder = new Order({
+          _id: req.body.data[i]._id,
+          table: req.body.data[i].table,
+          name: req.body.data[i].name,
+          price: req.body.data[i].price
+        }); 
+        newOrder.save(function(err, newOrder){});
+      }
+      res.send(200);
   }); 
 });
 

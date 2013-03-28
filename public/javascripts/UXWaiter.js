@@ -5,7 +5,7 @@ $(function() {
 	$( "#sortable" ).sortable({
     revert: true,
     stop: function(event, ui) {
-      $(ui.item).switchClass("menu-menu-item", "orders-menu-item");
+      $(ui.item).switchClass("menu-menu-item", "orders-menu-item").toggleClass("ui-draggable");
     }
   });
 

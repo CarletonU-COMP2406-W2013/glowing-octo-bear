@@ -52,8 +52,50 @@ $(function(){
 
   // /waiter Page
   // loads drink data from MongoDB and displays it in menu
-  $("drinks").on("click", function(){
-    Console.log(db.menu.find({type: "Beverage"}));
+  $("#drinks").on("click",function(){
+    var drinks = $.ajax({
+      url:'/drinks',
+      type:'post'
+    });
+    drinks.done(function (data, textStatus) {
+      $("<li id=draggable class=menu-menu-item><div class=item-name><p>Tooth</p></div><div class=item-price><p>$15.99</p></div></li>").appendTo("#menu-content-left ul ")
+
+      
+    });
+  });
+
+  // /waiter Page
+  // creates array from order list
+  $(".send-button").on("click",function(){
+    var orderItems = $("li.orders-menu-item");
+    var order = {
+      data: []
+    }
+    var cnt = 0;
+    orderItems.each(function(idx, li) {
+        cnt+=1;
+        var listItem = $(li);
+        // create object to use for each item in the order
+        var orderItem = {
+          _id: cnt,
+          table: 1,
+          name: "",
+          price: ""
+        }
+        // change object's properties
+        orderItem.name = listItem.children(".item-name").children().text();
+        orderItem.price = listItem.children(".item-price").children().text();
+        order.data.push(orderItem);
+    });
+    // AJAX call that sends order array to server
+    var sendOrder = $.ajax({
+      url:'/sendorder',
+      type:'post',
+      data: order
+    });
+    sendOrder.done(function (data, textStatus) {
+      console.log("done");
+    });
   });
 
 });
