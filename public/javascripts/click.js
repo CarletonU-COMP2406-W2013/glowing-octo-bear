@@ -57,12 +57,53 @@ $(function(){
       url:'/drinks',
       type:'post'
     });
-    drinks.done(function (data, textStatus) {
-      $("<li id=draggable class=menu-menu-item><div class=item-name><p>Tooth</p></div><div class=item-price><p>$15.99</p></div></li>").appendTo("#menu-content-left ul ")
 
-      
+    drinks.done(function (data, textStatus) {
+      createMenuItem(data, textStatus);
     });
+
   });
+
+  // /waiter Page
+  // loads Food data from MongoDB and displays it in menu
+  $("#food").on("click",function(){
+    var foods = $.ajax({
+      url:'/food',
+      type:'post'
+    });
+
+    foods.done(function (data, textStatus) {
+      createMenuItem(data, textStatus);
+    });
+
+  });
+
+  // /waiter Page
+  // loads Dessert data from MongoDB and displays it in menu
+  $("#dessert").on("click",function(){
+    var desserts = $.ajax({
+      url:'/dessert',
+      type:'post'
+    });
+
+    desserts.done(function (data, textStatus) {
+      createMenuItem(data, textStatus);
+    });
+    
+  });
+
+  //private helper function for loading menu items
+  function createMenuItem(data, textStatus) {
+    var menuItems = $("li.menu-menu-item");
+      menuItems.remove();
+
+      for (var i = data.length - 1; i >= 0; i--) {
+        var object = $("<li id=draggable class=menu-menu-item><div class=item-name><p>Tooth</p></div><div class=item-price><p>$15.99</p></div></li>")
+        object.children(".item-name").children("p").text(data[i].name);
+        object.children(".item-price").children("p").text("$"+data[i].price);
+        object.appendTo("#menu-content-left ul");
+      };
+  }
 
   // /waiter Page
   // creates array from order list

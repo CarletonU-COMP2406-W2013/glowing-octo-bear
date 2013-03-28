@@ -11,6 +11,9 @@ body {
   box-shadow: 5px 5px 50px 1px black;
   overflow-x: hidden;
 }
+p {
+  overflow: auto;
+}
 ul {
   height: 100%;
   list-style: none;
@@ -143,13 +146,13 @@ form {
 .item-name {
   height: 100%;
   float: left;
-  margin-left: 2em;
+  margin-left: 1.5em;
   margin-top: -0.35em;
 }
 .item-price {
   height: 100%;
   float: right;
-  margin-right: 2em;
+  margin-right: 1.5em;
   margin-top: -0.35em;
 }
 #orders .section-footer {

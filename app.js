@@ -28,7 +28,7 @@ var orderSchema = mongoose.Schema({
   _id: Number,
   table: Number,
   name: String,
-  price: String
+  price: Number
 });
 var menuSchema = mongoose.Schema({
   _id: Number,
@@ -93,8 +93,19 @@ app.get('/waiter', function(req, res, next){
     }
 }, waiter.waiter);
 
+// post for loading data into the menu
 app.post('/drinks', function(req, res){
-  Menu.find({}, function(err, items) {
+  Menu.find({type: "Beverage"}, function(err, items) {
+      res.send(200,items)
+  });
+});
+app.post('/food', function(req, res){
+  Menu.find({type: "Food"}, function(err, items) {
+      res.send(200,items)
+  });
+});
+app.post('/dessert', function(req, res){
+  Menu.find({type: "Dessert"}, function(err, items) {
       res.send(200,items)
   });
 });
