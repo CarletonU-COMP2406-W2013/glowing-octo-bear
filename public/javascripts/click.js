@@ -52,7 +52,7 @@ $(function(){
 
   // /waiter Page
   // loads drink data from MongoDB and displays it in menu
-  $("#drinks").on("click",function(){
+  $(".menu-category.drink").on("click",function(){
     var drinks = $.ajax({
       url:'/drinks',
       type:'post'
@@ -66,7 +66,7 @@ $(function(){
 
   // /waiter Page
   // loads Food data from MongoDB and displays it in menu
-  $("#food").on("click",function(){
+  $(".menu-category.food").on("click",function(){
     var foods = $.ajax({
       url:'/food',
       type:'post'
@@ -80,7 +80,7 @@ $(function(){
 
   // /waiter Page
   // loads Dessert data from MongoDB and displays it in menu
-  $("#dessert").on("click",function(){
+  $(".menu-category.dessert").on("click",function(){
     var desserts = $.ajax({
       url:'/dessert',
       type:'post'
