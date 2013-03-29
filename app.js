@@ -176,7 +176,6 @@ app.post("/logout", function(req, res){
 
 // handle orderCreation
 app.post("/sendorder", function(req, res){
-  console.log(req.body.data);
   // cleans out that tables orders
   if (req.body.data.length > 0) {
     var query = Order.remove({table: req.body.data[0].table});

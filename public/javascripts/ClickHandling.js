@@ -150,7 +150,6 @@ $(function(){
         // change object's properties
         orderItem.name = listItem.children(".item-name").children().text();
         orderItem.price = parseFloat(listItem.children(".item-price").children().text().replace("$",""));
-        console.log(orderItem);
         order.data.push(orderItem);
     });
     // AJAX call that sends order array to server
