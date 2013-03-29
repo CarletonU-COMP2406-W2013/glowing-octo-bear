@@ -176,28 +176,24 @@ app.post("/logout", function(req, res){
 
 // handle orderCreation
 app.post("/sendorder", function(req, res){
-  req.session.destroy(function(err){
-      if(err){
-          console.log("Error: %s", err);
-      }
-      // cleans out that tables orders
-      if (req.body.data.size() > 0) {
-        var query = Order.remove({table: req.body.data[0].table});
-        query.exec();
-      }
+  console.log(req.body.data);
+  // cleans out that tables orders
+  if (req.body.data.length > 0) {
+    var query = Order.remove({table: req.body.data[0].table});
+    query.exec();
+  }
 
-      var newOrder;
-      for (var i = req.body.data.length - 1; i >= 0; i--) {
-        newOrder = new Order({
-          _id: req.body.data[i]._id,
-          table: req.body.data[i].table,
-          name: req.body.data[i].name,
-          price: req.body.data[i].price
-        }); 
-        newOrder.save(function(err, newOrder){});
-      }
-      res.send(200);
-  }); 
+  var newOrder;
+  for (var i = req.body.data.length - 1; i >= 0; i--) {
+    newOrder = new Order({
+      _id: req.body.data[i]._id,
+      table: req.body.data[i].table,
+      name: req.body.data[i].name,
+      price: req.body.data[i].price
+    }); 
+    newOrder.save(function(err, newOrder){});
+  }
+  res.send(200);
 });
 
 

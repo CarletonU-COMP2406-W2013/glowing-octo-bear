@@ -24,13 +24,14 @@ $(function(){
         })
         object.appendTo("#menu-content-left ul");
       };
-    });    
-});
+    });
 
-$(document).ready(function () {
-  //sets default selected buttons
+    //sets default selected buttons
     $(".menu-category.drink").click()
     $($(".tables-menu-item")[0]).click()
+
+    // disables highlighting any of the html's body
+    $('body').disableSelection();
 });
 
 $(window).resize(function() {

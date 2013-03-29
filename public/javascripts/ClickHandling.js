@@ -52,6 +52,24 @@ $(function(){
     });
 	});
 
+  // /waiter PAge
+  // stlye changes for slected or click elements
+  $(".tables-menu-item").click(function(){
+    $(".content-wrapper").find(".selected-tables-menu-item").switchClass("selected-tables-menu-item","tables-menu-item")
+      $(this).switchClass("tables-menu-item","selected-tables-menu-item")
+  });
+  $(".menu-category").click(function(){
+    $(".content-wrapper").find(".selected-menu-category").switchClass("selected-menu-category","menu-category")
+      $(this).switchClass("menu-category","selected-menu-category")
+  });
+
+  $(".send-button").mousedown(function(){
+    $(this).switchClass("send-button","pressed-send-button")
+  });
+  $(".send-button").mouseup(function(){
+    $(this).switchClass("pressed-send-button","send-button")
+  });
+
   // /waiter Page
   // loads drink data from MongoDB and displays it in menu
   $(".menu-category.drink").on("click",function(){
@@ -114,7 +132,7 @@ $(function(){
   }
 
   // /waiter Page
-  // creates array from order list
+  // creates array from order list and posts to /sendorder
   $(".send-button").on("click",function(){
     var orderItems = $("li.orders-menu-item");
     var order = {
@@ -124,7 +142,7 @@ $(function(){
         var listItem = $(li);
         // create object to use for each item in the order
         var orderItem = {
-          _id: idx+1,
+          _id: $(".selected-tables-menu-item").text()+(idx+1),
           table: parseInt($(".selected-tables-menu-item").text()),
           name: "",
           price: 0.00
