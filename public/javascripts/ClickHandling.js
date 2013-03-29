@@ -52,6 +52,20 @@ $(function(){
     });
 	});
 
+  // Home Page
+  // handles clicking on the registion button
+  $("#logout").on("click",function(){
+    var logout = $.ajax({
+      url:'/logout',
+      type:'post'
+    });
+
+    logout.done(function (data, textStatus) {
+      location.href = "http://localhost:3500/"
+    });
+  });
+
+
   // /waiter PAge
   // stlye changes for slected or click elements
   $(".tables-menu-item").click(function(){

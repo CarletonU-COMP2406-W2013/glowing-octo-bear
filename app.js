@@ -170,7 +170,7 @@ app.post("/logout", function(req, res){
       if(err){
           console.log("Error: %s", err);
       }
-      res.redirect("/");
+      res.send(200);
   }); 
 });
 
