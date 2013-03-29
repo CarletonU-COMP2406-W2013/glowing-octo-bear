@@ -2,18 +2,19 @@
 
 $(document).ready(function(){
 	$(".tables-menu-item").click(function(){
-	  $(".content-wrapper").find(".selected-tables-menu-item").toggleClass("selected-tables-menu-item").toggleClass("tables-menu-item")
-      $(this).toggleClass("tables-menu-item").toggleClass("selected-tables-menu-item")
+	  $(".content-wrapper").find(".selected-tables-menu-item").switchClass("selected-tables-menu-item","tables-menu-item")
+      $(this).switchClass("tables-menu-item","selected-tables-menu-item")
 	});
 	$(".menu-category").click(function(){
-	  $(".content-wrapper").find(".selected-menu-category").toggleClass("selected-menu-category").toggleClass("menu-category")
-      $(this).toggleClass("menu-category").toggleClass("selected-menu-category")
+	  $(".content-wrapper").find(".selected-menu-category").switchClass("selected-menu-category","menu-category")
+      $(this).switchClass("menu-category","selected-menu-category")
 	});
+
 	$(".send-button").mousedown(function(){
-      $(this).toggleClass("send-button").toggleClass("pressed-send-button")
+	  $(this).switchClass("send-button","pressed-send-button")
 	});
 	$(".send-button").mouseup(function(){
-      $(this).toggleClass("pressed-send-button").toggleClass("send-button")
+	  $(this).switchClass("pressed-send-button","send-button")
 	});
 	$('body').disableSelection();
 });

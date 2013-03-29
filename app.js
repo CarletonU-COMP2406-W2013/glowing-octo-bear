@@ -181,8 +181,10 @@ app.post("/sendorder", function(req, res){
           console.log("Error: %s", err);
       }
       // cleans out that tables orders
-      var query = Order.remove({table: req.body.data[0].table});
-      query.exec();
+      if (req.body.data.size() > 0) {
+        var query = Order.remove({table: req.body.data[0].table});
+        query.exec();
+      }
 
       var newOrder;
       for (var i = req.body.data.length - 1; i >= 0; i--) {

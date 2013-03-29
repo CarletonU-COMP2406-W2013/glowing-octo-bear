@@ -37,6 +37,8 @@ $(function(){
           		window.location = 'waiter'
       		});
         });
+      // clears localstorage
+      localStorage.clear()
     login.fail(function (data, textStatus) {
     	if(textStatus === 400) {
     		$(".registerNotification").text("User doesn't exist in database");
@@ -123,7 +125,7 @@ $(function(){
         // create object to use for each item in the order
         var orderItem = {
           _id: idx+1,
-          table: 1,
+          table: parseInt($(".selected-tables-menu-item").text()),
           name: "",
           price: 0.00
         }
@@ -144,4 +146,24 @@ $(function(){
     });
   });
 
+  // /waiter Page
+  // loads current table as order data
+  $(".tables-menu-item").on("click",function(){
+    var localTableText = "table" + $(".selected-tables-menu-item").text()
+    var ordersList = $("li.orders-menu-item");
+    for (var i = ordersList.length - 1; i >= 0; i--) {
+      ordersList[i].remove()
+    };
+
+    var orders = JSON.parse(localStorage.getItem(localTableText));
+    if (orders) {
+      for (var i = orders.length - 1; i >= 0; i--) {
+        var object = $("<li class=orders-menu-item><div class=item-name><p>Ice</p></div><div class=item-price><p>$1.99</p></div></li>")
+        object.children(".item-name").children("p").text(orders[i].name);
+        object.children(".item-price").children("p").text(orders[i].price);
+        object.appendTo("ul#sortable.ui-sortable");
+      };
+    }
+  });
+  
 });
