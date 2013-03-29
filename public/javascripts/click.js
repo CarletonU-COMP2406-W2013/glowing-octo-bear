@@ -98,9 +98,15 @@ $(function(){
       menuItems.remove();
 
       for (var i = data.length - 1; i >= 0; i--) {
-        var object = $("<li id=draggable class=menu-menu-item><div class=item-name><p>Tooth</p></div><div class=item-price><p>$15.99</p></div></li>")
+        var object = $("<li class=menu-menu-item><div class=item-name><p>Tooth</p></div><div class=item-price><p>$15.99</p></div></li>")
         object.children(".item-name").children("p").text(data[i].name);
         object.children(".item-price").children("p").text("$"+data[i].price);
+        object.draggable({
+          connectToSortable: "#sortable",
+          helper: "clone",
+          revert: "invalid",
+          distance: 20
+        })
         object.appendTo("#menu-content-left ul");
       };
   }
