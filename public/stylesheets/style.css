@@ -15,10 +15,12 @@ p {
   overflow: auto;
 }
 ul {
-  height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+ul#sortable {
+  height: 100%;
 }
 li {
   display: block;
