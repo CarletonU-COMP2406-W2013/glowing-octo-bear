@@ -184,7 +184,6 @@ app.post("/sendorder", function(req, res){
       var query = Order.remove({table: req.body.data[0].table});
       query.exec();
 
-
       var newOrder;
       for (var i = req.body.data.length - 1; i >= 0; i--) {
         newOrder = new Order({

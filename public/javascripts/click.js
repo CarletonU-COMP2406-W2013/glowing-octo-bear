@@ -118,20 +118,19 @@ $(function(){
     var order = {
       data: []
     }
-    var cnt = 0;
     orderItems.each(function(idx, li) {
-        cnt+=1;
         var listItem = $(li);
         // create object to use for each item in the order
         var orderItem = {
-          _id: cnt,
+          _id: idx+1,
           table: 1,
           name: "",
-          price: ""
+          price: 0.00
         }
         // change object's properties
         orderItem.name = listItem.children(".item-name").children().text();
-        orderItem.price = listItem.children(".item-price").children().text();
+        orderItem.price = parseFloat(listItem.children(".item-price").children().text().replace("$",""));
+        console.log(orderItem);
         order.data.push(orderItem);
     });
     // AJAX call that sends order array to server
@@ -141,7 +140,7 @@ $(function(){
       data: order
     });
     sendOrder.done(function (data, textStatus) {
-      console.log("done");
+      
     });
   });
 
