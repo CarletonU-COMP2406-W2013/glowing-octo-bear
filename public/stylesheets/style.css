@@ -217,8 +217,8 @@ form {
   border-top: solid rgba(0, 0, 0, 0.19) 1px;
 }
 #drinks {
-  width: 128px;
-  height: 128px;
+  width: 80%;
+  height: 80%;
   margin: 12.3px;
   background-image: url(/images/drink-icon.png);
   background-repeat: no-repeat;
@@ -226,8 +226,8 @@ form {
   opacity: 0.8;
 }
 #food {
-  width: 128px;
-  height: 128px;
+  width: 80%;
+  height: 80%;
   margin: 12.3px;
   background-image: url(/images/food-icon.png);
   background-repeat: no-repeat;
@@ -235,8 +235,8 @@ form {
   opacity: 0.8;
 }
 #dessert {
-  width: 128px;
-  height: 128px;
+  width: 80%;
+  height: 80%;
   margin: 12.3px;
   background-image: url(/images/dessert-icon.png);
   background-repeat: no-repeat;
@@ -276,8 +276,8 @@ form {
   border-style: outset;
   width: 55%;
   height: 70%;
-  margin-top: 15px;
-  margin-left: 325px;
+  margin-top: 1.2%;
+  margin-left: 40%;
   font: 1.5em "Arial Black", Helvetica, Arial, sans-serif;
 }
 .send-button p {
@@ -292,8 +292,8 @@ form {
   border-style: outset;
   width: 55%;
   height: 70%;
-  margin-top: 15px;
-  margin-left: 325px;
+  margin-top: 1.2%;
+  margin-left: 40%;
   font: 1.5em "Arial Black", Helvetica, Arial, sans-serif;
 }
 .pressed-send-button p {

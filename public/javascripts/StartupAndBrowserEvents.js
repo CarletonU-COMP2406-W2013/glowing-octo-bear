@@ -1,4 +1,15 @@
+function adjustStyle(width) {
+    width = parseInt(width);
+    if (width < 1500) {
+      $("#size-stylesheet").attr("href", "/stylesheets/1440.css");
+    }
+    else {
+      $("#size-stylesheet").attr("href", "/stylesheets/style.css"); 
+    }
+}
+
 $(function(){
+  adjustStyle($(this).width());
 	//adjusts body width and height based on browser resolution
 	$("body").css("width", $(window).width());
 	$("body").css("height", $(window).height());
@@ -35,6 +46,7 @@ $(function(){
 });
 
 $(window).resize(function() {
+  adjustStyle($(this).width());
 	$("body").css("width", $(window).width());
 	$("body").css("height", $(window).height());
 });
