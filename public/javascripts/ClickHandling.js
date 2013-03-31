@@ -16,6 +16,8 @@ $(function(){
       $(".registerNotification").fadeOut(2000, function() {
       	$(".registerNotification").text("").fadeIn(0);
       	window.location = 'waiter'
+        // clears locally stored data on registration
+        localStorage.clear();
   		});
     });
 	});
@@ -35,7 +37,7 @@ $(function(){
     	$(".registerNotification").fadeOut(700, function() {
     		$(".registerNotification").text("").fadeIn(0);
     		window.location = 'waiter'
-        // clears localstorage
+        // clears locally stored data on login
         localStorage.clear();
   		});
     });

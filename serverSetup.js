@@ -84,7 +84,7 @@ db.menu.save({
 // MAIN COURSES
 db.menu.save({
 	_id: 200,
-	name: "Double Bacon Whiskey BBQ Burger",
+	name: "Bacon Whiskey Burger",
 	price: 12.99,
 	type: "Food"
 });
@@ -212,7 +212,7 @@ db.menu.save({
 // DESSERTS
 db.menu.save({
 	_id: 300,
-	name: "Triple Chocolate Cheesecake ",
+	name: "Triple Chocolate Cake ",
 	price: 6.99,
 	type: "Dessert"
 });
