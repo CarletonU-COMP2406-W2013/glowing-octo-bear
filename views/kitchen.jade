@@ -1,7 +1,8 @@
 extends layout
 
 block header
-  p= name
+  #page-name
+    p= name
 
 block content
   .order-content-1
@@ -16,3 +17,9 @@ block content
   .order-content-2
     .order-name Veal
     .order-time 5:52 PM
+
+block foot
+  #name-plate
+    p Gauhar Shakeel • Ben Fairclough • Sean Malcolmson
+  .switchview-button#waiter-button
+    p Waiter View   

@@ -1,10 +1,12 @@
 extends layout
 
 block header
-  p= name
-    #waiter-name
-      button#logout(type="button") Logout
-      p= "• " + username
+  #page-name
+    p= name
+  #logout-button
+      p Logout
+  #waiter-name
+    p= "• " + username
 
 block content
   #tables
@@ -50,4 +52,9 @@ block content
           #dessert
 
     .section-footer
-  
+
+block foot
+  #name-plate
+    p Gauhar Shakeel • Ben Fairclough • Sean Malcolmson
+  .switchview-button#kitchen-button
+    p Kitchen View  

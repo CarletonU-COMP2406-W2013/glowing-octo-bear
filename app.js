@@ -63,7 +63,7 @@ app.configure(function(){
       cookie: {maxAge: 60000 * 60} // 60 minutes
     , secret: "t0nberry"
     , store: new mongoStore({ //use a mongo-connect store
-      db: "sessions" 
+        db: "OrderUp"
     })
   }));
 
@@ -195,9 +195,12 @@ app.post("/sendorder", function(req, res){
   res.send(200);
 });
 
+// handle redirect to kitchen
+app.post("/switchview", function(req, res){
+  res.send(200);
+});
 
-
-///// call back for kitchen
+///// request for /kitchen
 app.get('/kitchen', kitchen.kitchen);
 
 http.createServer(app).listen(app.get('port'), function(){
