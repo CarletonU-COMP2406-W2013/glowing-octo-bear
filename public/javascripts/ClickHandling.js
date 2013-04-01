@@ -54,7 +54,13 @@ $(function(){
       });
     });
 	});
-
+// Home page
+// Attempt login when enter button pressed 
+$('input').keypress(function(event){
+  if(event.keyCode == 13){
+    $('#login').click();
+  }
+});
   // Home Page
   // handles clicking on the logout button
   $("#logout-button").on("click",function(){
