@@ -28,7 +28,8 @@ var orderSchema = mongoose.Schema({
   _id: Number,
   table: Number,
   name: String,
-  price: Number
+  price: Number,
+  time: String
 });
 var menuSchema = mongoose.Schema({
   _id: Number,
@@ -92,6 +93,8 @@ app.get('/waiter', function(req, res, next){
         res.redirect("/");
     }
 }, waiter.waiter);
+
+app.get('/kitchen', kitchen.kitchen);
 
 // post for loading data into the menu
 app.post('/drinks', function(req, res){
@@ -188,7 +191,8 @@ app.post("/sendorder", function(req, res){
       _id: req.body.data[i]._id,
       table: req.body.data[i].table,
       name: req.body.data[i].name,
-      price: req.body.data[i].price
+      price: req.body.data[i].price,
+      time: req.body.data[i].time
     }); 
     newOrder.save(function(err, newOrder){});
   }
@@ -201,7 +205,13 @@ app.post("/switchview", function(req, res){
 });
 
 ///// request for /kitchen
-app.get('/kitchen', kitchen.kitchen);
+app.post('/pollKitchen', function(req, res) {
+  Order.find(function(err, items) {
+      res.send(200,items)
+  });
+});
+
+//
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

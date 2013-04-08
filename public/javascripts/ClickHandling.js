@@ -54,13 +54,15 @@ $(function(){
       });
     });
 	});
-// Home page
-// Attempt login when enter button pressed 
-$('input').keypress(function(event){
-  if(event.keyCode == 13){
-    $('#login').click();
-  }
-});
+  
+  // Home page
+  // Attempt login when enter button pressed 
+  $('input').keypress(function(event){
+    if(event.keyCode == 13){
+      $('#login').click();
+    }
+  });
+
   // Home Page
   // handles clicking on the logout button
   $("#logout-button").on("click",function(){
@@ -235,6 +237,8 @@ $('input').keypress(function(event){
     var order = {
       data: []
     }
+    var currentTime = new Date();
+    timeStr = currentTime.getHours() + ":" + ("0" + currentTime.getMinutes()).slice(-2) + ":" + ("0" + currentTime.getSeconds()).slice(-2);
     orderItems.each(function(idx, li) {
         var listItem = $(li);
         // create object to use for each item in the order
@@ -242,7 +246,8 @@ $('input').keypress(function(event){
           _id: $(".selected-tables-menu-item").text()+(idx+1),
           table: parseInt($(".selected-tables-menu-item").text()),
           name: "",
-          price: 0.00
+          price: 0.00,
+          time: timeStr
         }
         // change object's properties
         orderItem.name = listItem.children(".item-name").children().text();
