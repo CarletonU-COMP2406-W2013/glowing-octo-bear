@@ -1,0 +1,7 @@
+**Motivation.md**
+
+The origin of Order Up came about as a result of week-long brainstorming. Many other ideas were considered, however, the majority of them were heavily dependent on external APIs. We were uncertain of how difficult many of these other application ideas would be or how closely they would follow what we were already learning in class / tutorials. Eventually the suggestion of a restaurant ordering application was brought up. Upon deeper examination, Order Up seemed like an increasingly appealing project. Starting from scratch we were not dependent on any APIs and could choose to which level of difficultly we wanted to take the application within our time constraints. 
+
+Interestingly from our own observations, it appears that for such a large market there doesn’t seem to be any dominant applications being used to place orders in restaurants. (Note that none of us have actually worked in a restaurant). Most businesses look like they use their own proprietary software. So with no other competition we could in theory fill this niche by providing a free application that is web based. The advantage Order Up being web-based is that It can be used essentially anywhere regardless of hardware or OS. Heavy emphasis is placed on the idea that waiters could use the ordering system on mobile phones with internet access. 
+
+Our goals were clearly outlined in our milestones, each of which was met. Though by examining our “extenstions.md” document you will see that we have many other ideas of how we could improve and further expand on what was built.
